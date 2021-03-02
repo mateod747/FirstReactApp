@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-
+import { Link } from 'react-router-dom';
 
 function Countries() {
     useEffect(() => {
@@ -23,7 +23,7 @@ function Countries() {
         <div className="Countries">
             {items.map(item => (
                 <div className="country" key={item.name}>
-                    <h1>{item.name}</h1>
+                    <Link className="link-css" to={`/countries/name/${item.name}`}>{item.name}</Link>
                 </div>
             ))}
         </div>
